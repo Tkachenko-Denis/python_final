@@ -53,13 +53,26 @@
 git clone https://github.com/Tkachenko-Denis/python_final
 cd python_final
 ```
+### Сборка и запуск
+
+```bash
+docker-compose up --build
+```
+### Доступ к сервисам:
+
+- PostgreSQL: `localhost:5432` (логин: `admin`, пароль: `admin`)
+- MySQL: `localhost:3306` (логин: `user`, пароль: `password`)
+- Kafka: `localhost:9092`
+- Airflow: `http://localhost:8080` (логин: `admin`, пароль: `admin`)
+
 
 ## Структура проекта
 
 ```plaintext
 project/
 ├── dags/                            # DAG-файлы для Airflow
-│   └── ... (ваши DAG-и)
+│   └── create_data_marts.py
+│   └──postgres_to_mysql.py
 ├── init_db/                         # Скрипты инициализации баз данных
 │   ├── init_postgres.sql
 │   ├── init_mysql.sql
